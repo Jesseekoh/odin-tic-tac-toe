@@ -327,6 +327,7 @@ main {
 
 .game-handler button {
     background: #ffb703;
+    cursor: pointer;
     display: inline-block;
     border-bottom: 4px solid #fb8500;
     border-radius: 8px;
@@ -435,6 +436,7 @@ main {
 }
 
 button.play-btn {
+    cursor: pointer;
     background-color: #ffb703;
     font-family: 'Press Start 2P', cursive;
     width: 300px;
