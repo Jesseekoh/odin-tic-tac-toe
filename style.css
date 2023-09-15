@@ -159,7 +159,12 @@ button {
 
 .cell span {
     /* font-size: 4.5rem; */
+}
+
+.cell {
     font-size: clamp(4.5rem, 10vw + 20px, 8rem);
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
 }
 
 a {
@@ -200,6 +205,10 @@ body {
     /* background: #023047; */
 
 
+}
+
+body {
+    overflow-x: hidden;
 }
 
 nav {
@@ -279,7 +288,7 @@ main {
     padding: 0.5rem;
     color: #fff;
     background-color: #457b9d;
-    opacity: 0.8;
+    /* opacity: 0.8; */
     background: repeating-linear-gradient(45deg, #022b40, #022b40 2px, #457b9d 2px, #457b9d 10px);
 
     border-radius: 8px;
@@ -322,4 +331,136 @@ main {
     border-bottom: 4px solid #fb8500;
     border-radius: 8px;
     padding: 0.5rem;
+}
+
+.game_announcement {
+    position: absolute;
+    /* height: 10px; */
+    background-color: #ffb703;
+    width: 100%;
+    right: 0;
+    display: grid;
+    place-items: center;
+    transform: translateX(-110%);
+    transition: all 250ms ease-in-out;
+    z-index: 1;
+}
+
+.active.game_announcement {
+    height: 200px;
+    transform: translateX(0);
+}
+
+.game_announcement h1 {
+    font-size: 2rem;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: 900;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    z-index: -1;
+}
+
+.active.overlay {
+    opacity: 1;
+    z-index: 0;
+}
+
+.glitch {
+    position: relative;
+    display: inline-block;
+    animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+
+    25% {
+        transform: translate(-5px, 5px);
+    }
+
+    50% {
+        transform: translate(5px, -5px);
+    }
+
+    75% {
+        transform: translate(-5px, 5px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+
+
+/* Game Options */
+.game-options {
+    display: flex;
+    justify-content: center;
+    padding-inline: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.6);
+    gap: 2rem;
+    flex-direction: column;
+    background-color: #044464;
+    max-width: 500px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin-inline: auto;
+    height: 100%;
+    max-height: 700px;
+    margin-block: auto;
+    opacity: 0;
+    transform: translate(-100%);
+    transition: all 250ms ease-in-out;
+}
+
+.game-options.active {
+    opacity: 1;
+    transform: translate(0);
+}
+
+button.play-btn {
+    background-color: #ffb703;
+    font-family: 'Press Start 2P', cursive;
+    width: 300px;
+    border-radius: 8px;
+    padding: 1rem 0.5rem
+}
+
+.game-options>div>input {
+    border: none;
+    width: 100%;
+    background-color: #044464;
+    color: #8ecae6;
+    font-size: 1.34rem;
+    border-bottom: 2px solid #8ecae6;
+}
+
+.player-1,
+.player-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.24rem;
+    width: 100%;
+}
+
+.player-1 h2,
+.player-2 h2 {
+    color: #219ebc;
+    font-family: 'Press Start 2P', cursive;
 }
